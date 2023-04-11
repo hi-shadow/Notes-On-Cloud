@@ -48,6 +48,7 @@ router.post(
   }
 );
 
+//Updating Notes EndPoint
 router.put("/updatenote/:id", FetchUser, async (req, res) => {
   try {
     const { title, description, tag } = req.body;
@@ -79,4 +80,25 @@ router.put("/updatenote/:id", FetchUser, async (req, res) => {
     res.status(500).send({ Error: "Internal Error Occured" + error.message });
   }
 });
+
+//Deleting an Note
+
+router.delete("/deletenote/:id", FetchUser, async (req, res) => {
+  try {
+
+    let note = await Notes.findById(req.params.id);
+    if (!note) {
+      return res.status(404).send("Not Found");
+    }
+    if (note.userId.toString() !== req.user.id) {
+      return res.status(401).send("Access denied");
+    }
+
+    note = await Notes.findByIdAndDelete(req.params.id);
+    res.status(200).send({ Sucess: "Note Deleted" });
+  } catch (error) {
+    res.status(500).send({ Error: "Internal Error Occured" + error.message });
+  }
+});
+
 module.exports = router;
