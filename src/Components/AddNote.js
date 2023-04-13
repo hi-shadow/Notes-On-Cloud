@@ -55,7 +55,7 @@ const AddNote = () => {
                                 </div>
                             </div>
                             <hr />
-                            <button type="button" className="btn btn-dark  text-center btn-block" onClick={SubmitForm} data-mdb-dismiss="modal">Add Note</button>
+                            <button disabled={note.title.length < 5 || note.description.length < 5} type="button" className="btn btn-dark  text-center btn-block" onClick={SubmitForm} data-mdb-dismiss="modal">Add Note</button>
                         </div>
                     </div>
                 </div>

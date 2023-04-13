@@ -71,7 +71,7 @@ const Notes = () => {
                                 </div>
                             </div>
                             <hr />
-                            <button type="button" className="btn btn-dark  text-center btn-block" onClick={SubmitForm} data-bs-dismiss="modal" aria-label="Close"   >Add Note</button>
+                            <button disabled={note.etitle.length < 5 || note.edescription.length < 5} type="button" className="btn btn-dark  text-center btn-block" onClick={SubmitForm} data-bs-dismiss="modal" aria-label="Close"   >Add Note</button>
                         </div>
 
                     </div>
