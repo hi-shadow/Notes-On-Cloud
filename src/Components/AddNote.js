@@ -16,6 +16,7 @@ const AddNote = () => {
     const SubmitForm = (e) => {
         e.preventDefault()
         addNote(note.title, note.description, note.tag, note.date)
+        setnote({ title: "", description: "", tag: "", date: "" })
     }
     return (
         <>
@@ -49,12 +50,12 @@ const AddNote = () => {
                                 <div className="col-md-6">
                                     <div className="my-2 mb-3">
                                         <label htmlFor="exampleInputPassword1" className="form-label">Note Date</label>
-                                        <input onChange={OnChange} type="date" name="date" className='form-control' />
+                                        <input onChange={OnChange} type="text" name="date" className='form-control' />
                                     </div>
                                 </div>
                             </div>
                             <hr />
-                            <button type="button" className="btn btn-dark  text-center btn-block" onClick={SubmitForm}>Add Note</button>
+                            <button type="button" className="btn btn-dark  text-center btn-block" onClick={SubmitForm} data-mdb-dismiss="modal">Add Note</button>
                         </div>
                     </div>
                 </div>
