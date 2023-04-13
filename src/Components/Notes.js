@@ -4,6 +4,7 @@ import NoteItem from './NoteItem'
 
 
 const Notes = () => {
+
     const context = useContext(NoteContext)
     const { notes, getAllNotes, updateNote } = context
     useEffect(() => {
@@ -28,6 +29,7 @@ const Notes = () => {
         e.preventDefault()
 
     }
+
     return (
         <>
             <button ref={ref} type="button" className="d-none btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -76,7 +78,15 @@ const Notes = () => {
                 </div>
             </div >
             <div className="row">
+                { }
+                {notes.length === 0 && <NoteItem note={{
+                    title: "No Notes To Display",
+                    description: "Add Some Notes To Diisplay here",
+                    length: 0
+
+                }} />}
                 {
+
                     notes.map((note) => {
                         return (
                             <div className="col-4 my-2" key={note._id}>
