@@ -46,75 +46,17 @@ const Navbar = () => {
                     </div>
 
                     <div className="d-flex align-items-center">
-                        <Link className="text-reset me-3" data-mdb-toggle="modal" data-mdb-target="#staticBackdrop">
+                        <Link className="text-reset me-3" data-mdb-toggle="modal" data-mdb-target="#Addmodal">
                             Add New Note
                         </Link>
-                        <Link className="text-reset me-3" to="/">
-                            <i className="fas fa-shopping-cart"></i>
+                        <Link className="text-reset me-3" to="/register" >
+                            Register
+                        </Link>
+                        <Link className="text-reset me-3" to="/signin" >
+                            SignIn
                         </Link>
 
-                        <div className="dropdown">
 
-
-
-                            <Link
-                                className="text-reset me-3 dropdown-toggle hidden-arrow"
-                                to="/"
-                                id="navbarDropdownMenuLink"
-                                role="button"
-                                data-mdb-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                <i className="fas fa-bell"></i>
-                                <span className="badge rounded-pill badge-notification bg-danger">1</span>
-                            </Link>
-                            <ul
-                                className="dropdown-menu dropdown-menu-end"
-                                aria-labelledby="navbarDropdownMenuLink"
-                            >
-                                <li>
-                                    <Link className="dropdown-item" to="/">Some news</Link>
-                                </li>
-                                <li>
-                                    <Link className="dropdown-item" to="/">Another news</Link>
-                                </li>
-                                <li>
-                                    <Link className="dropdown-item" to="/">Something else here</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="dropdown">
-                            <Link
-                                className="dropdown-toggle d-flex align-items-center hidden-arrow"
-                                to="/"
-                                id="navbarDropdownMenuAvatar"
-                                role="button"
-                                data-mdb-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                <img
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                                    className="rounded-circle"
-                                    height="25"
-                                    alt="Black and White Portrait of a Man"
-                                    loading="lazy"
-                                />
-                            </Link>
-                            <ul
-                                className="dropdown-menu dropdown-menu-end"
-                                aria-labelledby="navbarDropdownMenuAvatar"
-                            >
-                                <li>
-                                    <Link className="dropdown-item" to="/">My profile</Link>
-                                </li>
-                                <li>
-                                    <Link className="dropdown-item" to="/">Settings</Link>
-                                </li>
-                                <li>
-                                    <Link className="dropdown-item" to="/">Logout</Link>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </nav>
